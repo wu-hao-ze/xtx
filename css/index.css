@@ -1,0 +1,725 @@
+/** 分类及焦点图 **/
+.xtx_entry {
+    position: relative;
+    height: 500px;
+    background-color: #f2f2f2;
+}
+
+.xtx_category {
+    position: absolute;
+    z-index: 9;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.xtx_category_super li {
+    padding: 0 20px 0 40px;
+    height: 50px;
+    transition: background-color .25s;
+    cursor: pointer;
+}
+
+.xtx_category_super li:hover,
+.xtx_category_super li.active {
+    background-color: #5eb69c;
+}
+
+.xtx_category_super a {
+    line-height: 50px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.xtx_category_super a small {
+    margin-left: 10px;
+    font-size: 13px;
+}
+
+.xtx_category_super i {
+    float: right;
+    margin-top: 20px;
+    width: 12px;
+    height: 12px;
+    background-position: -75px -110px;
+}
+
+.xtx_banner {
+    position: relative;
+    width: 1240px;
+    height: 500px;
+    overflow: hidden;
+}
+
+.xtx_banner>a {
+    position: absolute;
+    top: 50%;
+    z-index: 9999;
+    margin-top: -22px;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.xtx_banner:hover>a {
+    opacity: 1;
+}
+
+.xtx_banner>a.prev {
+    left: 270px;
+    background-position: 14px -59px;
+}
+
+.xtx_banner>a.next {
+    right: 20px;
+    background-position: -24px -59px;
+}
+
+.xtx_banner .indicator {
+    position: absolute;
+    left: 250px;
+    bottom: 22px;
+    width: 990px;
+    text-align: center;
+    font-size: 0;
+}
+
+.xtx_banner .indicator span {
+    display: inline-block;
+    margin: 0 8px;
+    border-radius: 50%;
+    width: 9px;
+    height: 9px;
+    background-color: rgba(255, 255, 255, 0.43);
+    cursor: pointer;
+}
+
+.xtx_banner .indicator span.active {
+    background-color: #fff;
+}
+
+/** 公共面板 **/
+.xtx_panel .xtx_panel_header {
+    padding: 40px 0;
+    height: 115px;
+}
+
+.xtx_panel .xtx_panel_header h3 {
+    float: left;
+    margin-left: 6px;
+    height: 35px;
+    line-height: 35px;
+    color: #333;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.xtx_panel .xtx_panel_header small {
+    margin-left: 22px;
+    color: #999;
+    font-size: 16px;
+}
+
+.xtx_panel .xtx_panel_header .more {
+    float: right;
+    margin-top: 14px;
+    line-height: 1;
+    color: #999;
+    font-size: 16px;
+}
+
+.xtx_panel .xtx_panel_header .more i {
+    position: relative;
+    top: 2px;
+}
+
+.xtx_panel .xtx_panel_header .more:hover {
+    color: #5eb69c;
+}
+
+.xtx_panel .xtx_panel_header .tabs-bar {
+    float: right;
+    margin-right: 80px;
+    padding-top: 13px;
+    height: 35px;
+    font-size: 16px;
+}
+
+.xtx_panel .xtx_panel_header .tabs-bar a {
+    margin-left: 5px;
+    border-radius: 2px;
+    padding: 2px 8px;
+}
+
+.xtx_panel .xtx_panel_header .tabs-bar a:hover,
+.xtx_panel .xtx_panel_header .tabs-bar a.active {
+    background-color: #5eb69c;
+    color: #fff;
+}
+
+.xtx_panel .xtx_panel_goods_1 {
+    text-align: justify;
+    font-size: 0;
+}
+
+.xtx_panel .xtx_panel_goods_1:after {
+    content: '';
+    display: inline-block;
+    width: 306px;
+    height: 0;
+}
+
+.xtx_panel .xtx_panel_goods_1 a {
+    display: inline-block;
+    text-align: center;
+    width: 306px;
+    height: 406px;
+}
+
+.xtx_panel .xtx_panel_goods_1 img {
+    width: 306px;
+    height: 306px;
+}
+
+.xtx_panel .xtx_panel_goods_2 {
+    height: 610px;
+}
+
+.xtx_panel .xtx_panel_goods_2 li {
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    /* 注意这里先写1px的白色边框，方便后面的绿色边框不卡位置 */
+    border: 1px solid #fff;
+    padding-top: 10px;
+    width: 240px;
+    height: 300px;
+    background-color: #fff;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.xtx_panel .xtx_panel_goods_2 li:hover {
+    border-color: #5eb69c;
+}
+
+.xtx_panel .xtx_panel_goods_2 li:first-child {
+    margin-left: 0;
+    border: 0;
+    padding-top: 0;
+    height: 610px;
+}
+
+.xtx_panel .xtx_panel_goods_2 li:nth-last-child(-n+4) {
+    margin-top: 10px;
+}
+
+.xtx_panel .xtx_panel_goods_2 a {
+    display: block;
+}
+
+.xtx_panel .xtx_panel_goods_2 .img-box {
+    display: table-cell;
+    margin: 0 auto;
+    padding: 0 33px;
+    width: 240px;
+    height: 160px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.xtx_panel .xtx_panel_goods_2 .meta {
+    position: relative;
+    padding: 10px 22px 0;
+    height: 130px;
+    line-height: 1.3;
+    font-size: 19px;
+}
+
+.xtx_panel .xtx_panel_goods_2 .name {
+    display: -webkit-box;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.xtx_panel .xtx_panel_goods_2 .price {
+    position: absolute;
+    bottom: 10px;
+    color: #9A2E1F;
+    font-size: 22px;
+}
+
+.xtx_panel .xtx_panel_goods_2 .price small {
+    font-size: 17px;
+}
+
+.xtx_panel .xtx_panel_goods_2 .extra {
+    position: absolute;
+    bottom: -86px;
+    padding-top: 10px;
+    width: 100%;
+    height: 86px;
+    background-color: #5EB69C;
+    transition: bottom .3s;
+}
+
+.xtx_panel .xtx_panel_goods_2 li:hover .extra {
+    bottom: 0;
+}
+
+.xtx_panel .xtx_panel_goods_2 .extra span {
+    display: block;
+    margin: 0 auto;
+    padding: 9px 0 8px;
+    width: 124px;
+    text-align: center;
+    line-height: 1;
+    color: #fff;
+    font-size: 19px;
+}
+
+.xtx_panel .xtx_panel_goods_2 .extra span:last-child {
+    border-top: 1px solid #fff;
+    font-size: 13px;
+}
+
+.xtx_panel .xtx_panel_goods_2 .label {
+    position: absolute;
+    left: 0;
+    bottom: 266px;
+    border-radius: 0 2px 2px 0;
+    width: 188px;
+    height: 66px;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    line-height: 66px;
+    color: #fff;
+    font-size: 17px;
+}
+
+.xtx_panel .xtx_panel_goods_2 .label span:first-child {
+    display: block;
+    width: 76px;
+    background-color: #000;
+}
+
+.xtx_panel .xtx_panel_goods_2 .label span:last-child {
+    position: absolute;
+    left: 76px;
+    right: 0;
+    top: 50%;
+    width: 112px;
+    line-height: 1.4;
+    transform: translate(0, -50%);
+}
+
+/** 新鲜好物 **/
+.xtx_goods_new .xtx_panel_goods_1 a {
+    position: relative;
+    top: 0;
+    background-color: #F0F9F4;
+    transition: .5s;
+}
+
+.xtx_goods_new .xtx_panel_goods_1 a:hover {
+    top: -3px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.xtx_goods_new .xtx_panel_goods_1 .name {
+    display: inline-block;
+    margin: 12px 0 10px;
+    width: 100%;
+    font-size: 22px;
+}
+
+.xtx_goods_new .xtx_panel_goods_1 .price {
+    font-size: 23px;
+    color: #9A2E1F;
+}
+
+.xtx_goods_new .xtx_panel_goods_1 small {
+    font-size: 16px;
+}
+
+/** 人气推荐 **/
+.xtx_goods_popular {
+    padding-bottom: 42px;
+}
+
+.xtx_goods_popular .xtx_panel_goods_1 a {
+    transition: 0.5s;
+}
+
+.xtx_goods_popular .xtx_panel_goods_1 a:hover {
+    transform: translate(0, -3px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.xtx_goods_popular .xtx_panel_goods_1 .title {
+    display: inline-block;
+    margin: 20px 0 16px;
+    width: 100%;
+    line-height: 1;
+    font-size: 22px;
+}
+
+.xtx_goods_popular .xtx_panel_goods_1 .alt {
+    font-size: 18px;
+    color: #999;
+}
+
+/** 秒杀专区 **/
+.xtx_goods_seckill {
+    background-color: #f5f5f5;
+    padding: 7px 0 55px;
+}
+
+.xtx_goods_seckill .countdown {
+    float: left;
+    width: 240px;
+    height: 305px;
+    background-image: url(../images/seckill.jpg);
+    background-size: 240px;
+    text-align: center;
+    line-height: 1;
+    color: #fff;
+}
+
+.xtx_goods_seckill .countdown .next {
+    margin: 25px 0 14px;
+    font-size: 16px;
+}
+
+.xtx_goods_seckill .countdown .title {
+    font-size: 33px;
+}
+
+.xtx_goods_seckill .countdown .tips {
+    margin-top: 112px;
+    font-size: 23px;
+}
+
+.xtx_goods_seckill .countdown small {
+    font-size: 17px;
+}
+
+.xtx_goods_seckill .countdown .clock {
+    margin: 18px auto 0;
+    width: 142px;
+    overflow: hidden;
+}
+
+.xtx_goods_seckill .countdown .clock span,
+.xtx_goods_seckill .countdown .clock i {
+    float: left;
+    text-align: center;
+    line-height: 34px;
+    font-size: 23px;
+}
+
+.xtx_goods_seckill .countdown .clock span {
+    border-radius: 2px;
+    width: 34px;
+    height: 34px;
+    background-color: #303430;
+}
+
+.xtx_goods_seckill .countdown .clock i {
+    width: 20px;
+}
+
+.xtx_goods_seckill .xtx_goods {
+    margin-left: 240px;
+}
+
+.xtx_goods_seckill .xtx_goods a {
+    display: block;
+}
+
+.xtx_goods_seckill .xtx_goods li {
+    float: left;
+    width: 240px;
+    margin-left: 10px;
+    padding-top: 20px;
+    height: 305px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.xtx_goods_seckill .xtx_goods .img-box {
+    display: table-cell;
+    margin: 0 auto;
+    padding: 0 33px;
+    width: 240px;
+    height: 174px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.xtx_goods_seckill .xtx_goods .name {
+    margin: 20px 0 12px;
+    line-height: 1;
+    font-size: 18px;
+}
+
+.xtx_goods_seckill .xtx_goods .percent {
+    margin: 0 auto 12px;
+    border-radius: 6px;
+    width: 165px;
+    height: 6px;
+    background-color: #E2E2E2;
+}
+
+.xtx_goods_seckill .xtx_goods .inner {
+    display: block;
+    border-radius: 6px;
+    height: 100%;
+    background-color: #D54847;
+}
+
+.xtx_goods_seckill .xtx_goods .price {
+    text-align: center;
+    font-size: 20px;
+}
+
+.xtx_goods_seckill .xtx_goods .price span:first-child {
+    color: #9A2E1F;
+}
+
+.xtx_goods_seckill .xtx_goods .price span:last-child {
+    color: #999;
+    font-size: 16px;
+}
+
+/** 热门品牌 **/
+.xtx_goods_brand {
+    padding-bottom: 32px;
+}
+
+.xtx_goods_brand .page-bar {
+    float: right;
+}
+
+.xtx_goods_brand .page-bar a {
+    display: inline-block;
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    background-color: #e2e2e2;
+    line-height: 1;
+}
+
+.xtx_goods_brand .page-bar a:hover,
+.xtx_goods_brand .page-bar a.active {
+    background-color: #5EB69C;
+}
+
+.xtx_goods_brand .page-bar .prev {
+    margin-right: 5px;
+    background-position: -32px -106px;
+    transform: rotate(180deg);
+}
+
+.xtx_goods_brand .page-bar .next {
+    background-position: -32px -106px;
+}
+
+.xtx_goods_brand .xtx_goods {
+    height: 305px;
+}
+
+.xtx_goods_brand .xtx_goods li {
+    float: left;
+    font-size: 0;
+}
+
+.xtx_goods_brand .xtx_goods a {
+    margin-right: 10px;
+}
+
+.xtx_goods_brand .xtx_goods a img {
+    width: 240px;
+    height: 305px;
+}
+
+.xtx_goods_brand .xtx_goods a:last-child {
+    margin-right: 0;
+}
+
+/** 生鲜 **/
+.xtx_goods_category {
+    padding-bottom: 80px;
+    background-color: #f5f5f5;
+}
+
+/** 最新主题 **/
+.xtx_goods_topic li {
+    float: left;
+    margin-left: 11px;
+    width: 406px;
+    transition: .5s;
+}
+
+.xtx_goods_topic li:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transform: translate(0, -3px);
+}
+
+.xtx_goods_topic li:first-child {
+    margin-left: 0;
+}
+
+.xtx_goods_topic li a {
+    position: relative;
+    display: block;
+    height: 287px;
+}
+
+.xtx_goods_topic .meta {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 50%);
+    color: #fff;
+
+}
+
+.xtx_goods_topic .meta .title {
+    position: absolute;
+    bottom: 0px;
+    padding-left: 16px;
+    height: 70px;
+    font-size: 22px;
+}
+
+.xtx_goods_topic .meta .title small {
+    display: block;
+    font-size: 19px;
+    color: #999;
+}
+
+.xtx_goods_topic .meta .price {
+    position: absolute;
+    bottom: 25px;
+    right: 16px;
+    border-radius: 2px;
+    padding: 4px 8px 4px 7px;
+    background-color: #fff;
+    line-height: 1;
+    color: #9A2E1F;
+    font-size: 17px;
+}
+
+.xtx_goods_topic .meta .price small {
+    font-size: 15px;
+}
+
+.xtx_goods_topic .social {
+    padding: 0 20px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 16px;
+}
+
+.xtx_goods_topic .social i {
+    position: relative;
+    top: 2px;
+    display: inline-block;
+    margin-right: 5px;
+    width: 15px;
+    height: 14px;
+}
+
+.xtx_goods_topic .social .like,
+.xtx_goods_topic .social .liked,
+.xtx_goods_topic .social .view {
+    float: left;
+    margin-right: 25px;
+}
+
+.xtx_goods_topic .social .reply {
+    float: right;
+}
+
+.xtx_goods_topic .social .like i {
+    background-position: -120px -110px;
+}
+
+.xtx_goods_topic .social .liked i {
+    background-position: -240px -110px;
+}
+
+.xtx_goods_topic .social .view i {
+    background-position: -160px -110px;
+}
+
+.xtx_goods_topic .social .reply i {
+    top: 4px;
+    width: 17px;
+    height: 16px;
+    background-position: -200px -110px;
+}
+
+/** 大家都在说 **/
+.xtx_goods_discuss {
+    margin-bottom: 80px;
+}
+
+.xtx_goods_discuss li {
+    float: left;
+    margin-left: 11px;
+    padding-bottom: 24px;
+    width: 406px;
+    transition: .5s;
+}
+
+.xtx_goods_discuss li:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transform: translate(0, -3px);
+}
+
+.xtx_goods_discuss li:first-child {
+    margin-left: 0;
+}
+
+.xtx_goods_discuss .meta {
+    position: relative;
+    margin: 0 16px;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0 0;
+    height: 90px;
+    font-size: 22px;
+}
+
+.xtx_goods_discuss .meta .title small {
+    display: block;
+    font-size: 16px;
+    color: #999;
+}
+
+.xtx_goods_discuss .meta .price {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    font-size: 18px;
+    color: #9A2E1F;
+}
+
+.xtx_goods_discuss .meta .price small {
+    font-size: 13px;
+}
+
+.xtx_goods_discuss .message {
+    margin-top: 10px;
+    padding: 0 16px;
+    height: 90px;
+    font-size: 17px;
+    color: #666;
+}

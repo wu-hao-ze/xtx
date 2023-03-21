@@ -1,0 +1,337 @@
+.xtx_body {
+    padding: 30px 0 85px;
+    background-color: #f6f6f6;
+}
+
+.xtx_body .wrapper {
+    display: flex;
+}
+
+/* 侧边栏 */
+.xtx_body .aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-right: 18px;
+    width: 227px;
+    /* 最小高度是500px，在没有内容的时候高度是500px，当内容超过500px的时候会自动把盒子撑开 */
+    min-height: 500px;
+    background-color: #fff;
+}
+
+.xtx_body .aside .user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.xtx_body .aside .user>div {
+    padding: 47px 66px 0 66px;
+}
+
+.xtx_body .aside .user img {
+    width: 85px;
+}
+
+.xtx_body .aside .user span {
+    margin: 12px 0;
+    font-size: 18px;
+}
+
+.xtx_body .aside .user p {
+    border-radius: 13px;
+    width: 93px;
+    height: 26px;
+    background-image: linear-gradient(264deg, #e05e2f 0%, #ea745e 95%);
+    background-blend-mode: normal, normal;
+    line-height: 26px;
+}
+
+.xtx_body .aside .user p img {
+    margin-right: 4px;
+    vertical-align: middle;
+    width: 15px;
+    transform: translate(0, -2px);
+}
+
+.xtx_body .aside dl {
+    margin-top: 66px;
+}
+
+.xtx_body .aside dl dt {
+    margin-bottom: 22px;
+    font-size: 18px;
+}
+
+.xtx_body .aside dl dd {
+    position: relative;
+    margin-bottom: 18px;
+    line-height: 18px;
+}
+
+.xtx_body .aside dl dd::before {
+    content: "";
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: #5cb99e;
+}
+
+.xtx_body .aside dl dd:hover::before {
+    visibility: visible;
+}
+
+.xtx_body .aside dl dd a:hover {
+    color: #5cb99e;
+}
+
+/* 主体内容 */
+.xtx_body .main {
+    flex: 1;
+    min-height: 500px;
+}
+
+/* 账户概览 */
+.overview {
+    display: flex;
+    margin-bottom: 18px;
+    padding: 20px 0;
+    height: 132px;
+    background-color: #fff;
+}
+
+.overview div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+}
+
+.overview div:first-child {
+    border-right: 1px solid #f4f4f4;
+}
+
+.overview div a:hover {
+    color: #c81623
+}
+
+.overview div a img {
+    margin-bottom: 10px;
+    width: 25px;
+}
+
+.overview div span {
+    display: inline-block;
+    transform: translate(0, -4px);
+    color: #e05e30;
+    font-size: 25px;
+}
+
+.overview div p {
+    font-size: 16px;
+}
+
+.overview div:last-child p {
+    transform: translate(0, 1px);
+}
+
+.overview div a:last-child img {
+    width: 18px;
+}
+
+/* 公共样式 */
+.pannel {
+    margin-bottom: 20px;
+    padding: 28px 20px;
+    background-color: #fff;
+}
+
+.pannel:last-child {
+    margin-bottom: 0px;
+}
+
+.pannel .pannel_title {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f4f4f4;
+    height: 45px;
+}
+
+.pannel .pannel_title h4 {
+    color: #333;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.pannel .pannel_title a {
+    display: flex;
+    color: #999;
+    font-size: 16px;
+}
+
+.pannel .pannel_title .more i {
+    position: relative;
+    top: 4px;
+    height: 25px;
+}
+
+.pannel .pannel_title .more:hover {
+    color: #5eb69c;
+}
+
+/* 我的订单 */
+.orders li {
+    display: flex;
+    /* 让上边的边框和下面的边框重叠 */
+    margin-top: -1px;
+    margin-bottom: 20px;
+    border: 1px solid #f4f4f4;
+    height: 137px;
+    color: #333333;
+}
+
+.orders li:last-child {
+    margin-bottom: 0;
+}
+
+.orders li .goods {
+    display: flex;
+    align-items: center;
+    margin-right: 120px;
+    padding: 17px 0 14px 12px;
+    flex: 1;
+}
+
+.orders .goods .pic {
+    width: 107px;
+    height: 107px;
+}
+
+.orders .goods .txt {
+    /* flex: 1; */
+    /* 如果用flex: 1;是没法实现溢出显示省略号的，因为如果文字占用剩余宽度，则文字不管多长，都会保持伸展到完全，且是一行，而且外边的order是flex布局，会自动延展，所以一定要设置宽度尺寸，超出这个宽度就会自动溢出隐藏 */
+    /* 这个宽度是规定文字的宽度，超出这个宽度才会溢出显示省略号 */
+    width: 220px;
+}
+
+.orders .goods .txt h5 {
+    color: #333333;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.orders .goods .txt p {
+    color: #999999;
+    font-size: 14px;
+}
+
+
+.orders li .status {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    color: #e05e30;
+    font-size: 14px;
+}
+
+.orders li .status a {
+    color: #999999;
+}
+
+.orders li .pay {
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+    width: 200px;
+}
+
+.orders .pay p:first-child {
+    color: #9a2e1f;
+}
+
+.orders li .action {
+    width: 180px;
+}
+
+.orders li .common {
+    display: flex;
+    /* 默认主轴水平向右，flex之后3个p标签水平排，而要使得竖直排，就得换成主轴垂直向下 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.orders li .action a:first-child {
+    margin-bottom: 10px;
+    border-radius: 2px;
+    width: 100px;
+    height: 30px;
+    background-color: #5eb69c;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* 收藏的商品 */
+.collection ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 35px 0 35px;
+}
+
+.collection li {
+    position: relative;
+    width: 190px;
+}
+
+.collection li:last-child {
+    margin-right: 0;
+}
+
+.collection li .pic {
+    margin-bottom: 23px;
+}
+
+.collection li .pic img {
+    width: 160px;
+}
+
+.collection li .txt {
+    margin-bottom: 12px;
+    line-height: 1.2em;
+    font-size: 16px;
+}
+
+.collection li .pay {
+    color: #9a2e1f;
+    font-size: 22px;
+}
+
+.collection li:nth-child(2)::before {
+    content: "6折";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: solid 1px #5eb69c;
+    border-radius: 3px;
+    width: 18px;
+    height: 36px;
+    text-align: center;
+    line-height: 18px;
+    color: #5eb69c;
+    font-size: 14px;
+}

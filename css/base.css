@@ -1,0 +1,94 @@
+/* CSS初始化 */
+
+/* 去除标签默认的 margin 和 padding并內减模式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 设置网页统一的字体大小、行高、字体系列相关属性 */
+body {
+    /* CSS3 抗锯齿形 让文字显示的更加清晰 */
+    -webkit-font-smoothing: antialiased;
+    background-color: #fff;
+    font: 16px/1.5 "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial,
+        "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+    color: #666;
+}
+
+/* 去除列表默认样式 */
+li {
+    list-style: none;
+}
+
+/* 去除a标签默认下划线，并设置默认文字颜色 */
+a {
+    text-decoration: none;
+    color: #666;
+}
+
+a:hover {
+    color: #c81623
+}
+
+/* 设置img的垂直对齐方式为居中对齐，去除img默认下间隙 */
+img {
+    /* border:0 照顾低版本浏览器 如果图片外面包含了链接会有边框的问题 */
+    border: 0;
+    width: 100%;
+    /* 取消图片底侧有空白缝隙的问题 */
+    vertical-align: middle;
+}
+
+/* 去除input，textarea默认样式 */
+input,
+textarea,
+button {
+    /* 去掉鼠标没点击输入框时input输入框的默认黑色边框 */
+    border: none;
+    /* 去掉鼠标点击输入框时input输入框的默认黑色边框 */
+    outline: none;
+    color: #333;
+    font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial,
+        "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+
+}
+
+/* 禁止textarea拉伸 */
+textarea {
+    resize: none;
+}
+
+/* 双伪元素清除法 */
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: table;
+    visibility: hidden;
+    height: 0;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+.hide,
+.none {
+    display: none
+}
+
+/* 去除默认的倾斜效果 */
+em,
+i {
+    font-style: normal;
+}
+
+/* 当我们鼠标经过button按钮的时候，鼠标变成小手 */
+button {
+    cursor: pointer
+}
